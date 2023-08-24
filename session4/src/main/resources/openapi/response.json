@@ -1,0 +1,10 @@
+{
+  "badRequest": {
+    "message": "Bad request From File",
+    "code": 400
+  },
+  "internalServerError": {
+    "message":"Internal server error" ,
+    "code": 500
+  }
+}
