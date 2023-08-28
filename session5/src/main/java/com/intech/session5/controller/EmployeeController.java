@@ -24,7 +24,7 @@ public class MyTaskManagerController {
             new MyTask("title5","description5")
     ));
     @GetMapping("")
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<MyTask>> getAll(){
         return new ResponseEntity<>(taskList, HttpStatus.OK);
     }

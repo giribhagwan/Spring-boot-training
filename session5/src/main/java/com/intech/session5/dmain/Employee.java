@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@En
 public class MyTask {
     String title;
     String description;
