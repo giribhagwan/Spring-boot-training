@@ -14,4 +14,10 @@ public class EmployeeService {
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
     }
+
+    public Employee update(Long id, Employee employee) {
+        Employee dbEmployee=employeeRepository.findById(id).orElseThrow(()-> new RuntimeException("employee not present"));
+        dbEmployee.setName(employee.getName());
+        return employeeRepository.save(dbEmployee);
+    }
 }

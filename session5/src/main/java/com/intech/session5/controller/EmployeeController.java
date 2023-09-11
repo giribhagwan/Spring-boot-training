@@ -1,10 +1,12 @@
 package com.intech.session5.controller;
 
-import com.intech.session5.dmain.MyTask;
+import com.intech.session5.dmain.Employee;
+import com.intech.session5.server.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,18 +16,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/task")
-public class MyTaskManagerController {
+public class EmployeeController {
 
-    List<MyTask> taskList=new ArrayList<>(Arrays.asList(
-            new MyTask("title1","description1"),
-            new MyTask("title2","description2"),
-            new MyTask("title3","description3"),
-            new MyTask("title4","description4"),
-            new MyTask("title5","description5")
-    ));
+    @Autowired
+    EmployeeService employeeService;
     @GetMapping("")
 //    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<MyTask>> getAll(){
-        return new ResponseEntity<>(taskList, HttpStatus.OK);
+    public ResponseEntity<List<Employee>> getAll(){
+        return new ResponseEntity<>(employeeService.getAll(), HttpStatus.OK);
     }
 }
