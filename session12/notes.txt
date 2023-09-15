@@ -1,0 +1,17 @@
+- What is Thymeleaf?
+	Thymeleaf is a server-side java template engine that user natural templates to generate HTML page.
+- The Thymeleaf integration with Spring MVC is managed by the Thymeleaf project. 	
+- Thymeleaf allows you to process six kinds of templates
+	XML
+	Valid XML
+	XHTML
+	Valid XHTML
+	HTML5
+	Legacy HTML5
+	
+	Except for the Legacy HTML5 mode, all the above modes refer to well-defined XML files. It allows us to process HTML5 files with features such as standalone tags, tag attributes without value, or not written between quotes.
+	
+- Thymeleaf’s core is a DOM processing engine. Specifically, it uses its own high-performance DOM implementation —not the standard DOM API— for building in-memory tree representations of your templates.
+
+Using htmx with Spring Boot and Thymeleaf
+Htmx allows building complex web applications that feel like an SPA(single-page-application) without relying on Angular or React. The client's behavior is mainly controlled by attributes within the HTML code that execute an Ajax request and integrate the result into the DOM - perfectly fitting for server-side rendering with Thymeleaf.

@@ -1,0 +1,26 @@
+<html>
+<div th:switch="${employees}">
+    <h2 th:case="null"> No Employee yet !</h2>
+    <div th:case="*">
+        <h2>Employees</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name </th>
+                <th>Email </th>
+                <th>Edit </th>
+                <th>Delete </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee: ${employees}">
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</html>
