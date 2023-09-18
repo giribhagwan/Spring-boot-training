@@ -16,6 +16,8 @@
             <tr th:each="employee: ${employees}">
                 <td th:text="${employee.name}"></td>
                 <td th:text="${employee.email}"></td>
+                <td> <a th:href="@{/edit/{id} (id=${employee.id})}"> Edit </a> </td>
+                <td> <a th:href="@{/delete/{id} (id=${employee.id})}"> Delete </a> </td>
             </tr>
             </tbody>
         </table>

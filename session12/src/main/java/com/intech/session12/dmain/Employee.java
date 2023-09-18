@@ -21,4 +21,5 @@ public class Employee {
     String name;
     @NotEmpty(message = "Email is should not be empty")
     String email;
+
 }
