@@ -26,7 +26,7 @@ public class OrderMasterServices {
     }
      Integer getProductAvl(Long id){
          ResponseEntity<ApiResponseDto> response
-                 = restTemplate.getForEntity( "http://PRODCUT-CATALOG-SERVICE/api/v1/product/stock/"+id, ApiResponseDto.class);
+                 = restTemplate.getForEntity( "http://PRODUCT-CATALOG-SERVICE/api/v1/product/stock/"+id, ApiResponseDto.class);
          if (response.getStatusCode().value()==200){
              try {
                  ApiResponseDto apiResponseDto =  response.getBody();
@@ -45,7 +45,7 @@ public class OrderMasterServices {
                  .productId(productId)
                  .qty(qty).build());
          ResponseEntity<ApiResponseDto> response
-                 = restTemplate.exchange( "http://PRODCUT-CATALOG-SERVICE/api/v1/product/stock", HttpMethod.POST,entity,ApiResponseDto.class);
+                 = restTemplate.exchange( "http://PRODUCT-CATALOG-SERVICE/api/v1/product/stock", HttpMethod.POST,entity,ApiResponseDto.class);
          return response.getStatusCode().value() == 200;
      }
 

@@ -31,7 +31,8 @@ public class UserMasterController {
                 .build(),HttpStatus.OK);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponseDto> getById(@PathVariable Long id){
+    public ResponseEntity<ApiResponseDto> getById(@PathVariable Long id) throws InterruptedException {
+        Thread.sleep(6000);
         return new ResponseEntity<>(ApiResponseDto.builder()
                 .message("fetch successfully")
                 .code(HttpStatus.OK.value())
