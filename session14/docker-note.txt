@@ -1,0 +1,34 @@
+
+
+build image: 
+	> docker build -t eureka-server:1.0 .
+
+Run the image: 
+	> docker run -p 3000:3000 getting-started
+Push the docker image on dokcer-hub
+	> docker tag eureka-server:1.0 bhagwangiri/micro:1.0   //Add tag
+	> push image docker push bhagwangiri/micro
+run compose: 
+	> docker-compose -f eureka-compose.yml up -d 
+	> docker-compose -f instances-compose.yml up -d 
+stop compose services:
+	> docker-compose -f instances-compose.yml stop
+ ==========
+ 1. Introduction of docker.
+ 2. Installation process.
+ 3. DockerFile sample example for eureka-server, make chagnes in build.gradle file for jar creation.
+ 4. Rune the docker image and see the output.
+ 5. Explain the our microservice flow.
+ 6.	Explain about Docker compose
+ 7.	Explain Docker Hub.
+ 8.	open conig-service and create DockerFile 
+ 9.	Explain the challenges of files, push the config repository 
+10.	make change in config-service as per the new repository link
+11.	build and run the config service image.
+12.	Open the user-service and create DockerFile
+13.	build and run the user-service and see the output in eureka dashboard
+14. Create the compose file for eureka-service, and config-service and all rest of instances.
+15. Run the compose files one by one.
+16. create the docker compose for instances and run it 
+	
+	

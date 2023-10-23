@@ -1,0 +1,24 @@
+version: '1'
+services:
+   user-service:
+    image:  user-service:1.0
+    ports:
+      - "8081:8081"
+
+   product-catalog-service:
+    image:  product-catalog-service:1.0
+    ports:
+      - "8082:8082"
+
+   order-managment-service:
+    image:  order-managment-service:1.0
+    ports:
+      - "8083:8083"
+
+   gateway-service:
+    image:  gateway-service:1.0
+    ports:
+      - "8080:8080"
+networks:
+  common-network:
+    external: true
